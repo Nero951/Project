@@ -19,10 +19,10 @@ public class DictionaryTagDAO {
             //1.获取数据库连接
             c = DBUtil.getConnection();
             String sql = "select concat(d.dictionary_key, dt.dictionary_tag_key) dictionary_tag_key," +
-                    "       dt.dictionary_tag_value" +
-                    "from dictionary d" +
-                    "         join dictionary_tag dt on d.id = dt.dictionary_id" +
-                    "where d.dictionary_key = ?";
+                    "                           dt.dictionary_tag_value" +
+                    "                    from dictionary d" +
+                    "                             join dictionary_tag dt on d.id = dt.dictionary_id" +
+                    "                    where d.dictionary_key = ?";
             //2.创建操作命令对象
             ps = c.prepareStatement(sql);
             ps.setString(1, key);

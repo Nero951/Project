@@ -18,7 +18,7 @@ public class DBUtil {
      * 4.如果是查询操作，处理结果集
      * 5.释放资源
      */
-    private static final String URL = "jdbc:mysql://localhost:3306/stu_info?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3306/stu_info";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "0533";
 
@@ -37,20 +37,17 @@ public class DBUtil {
         }
         return DS;
     }
-    public static Connection getConnection() {
+    public static Connection getConnection(){
         try {
             return getDataSource().getConnection();
         } catch (SQLException e) {
-             throw new RuntimeException("获取数据库连接失败", e);
+            throw new RuntimeException("获取数据库连接失败", e);
         }
     }
 
-    //更新资源的时候调用
     public static void close(Connection c, Statement s){
         close(c, s, null);
     }
-
-    //查询操作的时候调用
     public static void close(Connection c, Statement s, ResultSet r){
         try {
             if(r != null)
@@ -64,4 +61,5 @@ public class DBUtil {
         }
     }
 }
+
 

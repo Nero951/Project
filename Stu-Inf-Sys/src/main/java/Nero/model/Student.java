@@ -46,4 +46,6 @@ public class Student {
      * 创建时间
      */
     private Date createTime;
+
+    private Classes classes;
 }
