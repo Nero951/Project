@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Stu-Inf-Sys:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Stu-Inf-Sys</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="sis.war">
+      <element id="artifact" artifact-name="Stu-Inf-Sys:war exploded" />
+    </root>
+  </artifact>
+</component>

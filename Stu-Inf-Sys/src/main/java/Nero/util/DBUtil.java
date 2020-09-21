@@ -37,11 +37,11 @@ public class DBUtil {
         }
         return DS;
     }
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         try {
             return getDataSource().getConnection();
         } catch (SQLException e) {
-            throw new RuntimeException("获取数据库连接失败", e);
+             throw new RuntimeException("获取数据库连接失败", e);
         }
     }
 

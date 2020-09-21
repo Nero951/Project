@@ -22,6 +22,7 @@ public class TestServlet extends HttpServlet {
 
         PrintWriter pw = resp.getWriter();
         Response r = new Response();
+
         r.setCode("OK");
         r.setMessage("成功");
         List<String> l = new ArrayList<>();
