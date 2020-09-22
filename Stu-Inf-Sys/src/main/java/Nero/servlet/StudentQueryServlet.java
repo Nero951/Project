@@ -10,10 +10,9 @@ import java.util.List;
 
 @WebServlet("/student/query")
 public class StudentQueryServlet extends AbstractBaseServlet{
-
     @Override
-    protected Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    protected Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         List<Student> students = StudentDAO.query();
-        return null;
+        return students;
     }
 }

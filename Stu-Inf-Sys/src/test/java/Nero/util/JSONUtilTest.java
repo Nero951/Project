@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JSONUtilTest {
+public class JSONUtilTest{
     @Test
     public void testWrite(){
         Map<String,String> map = new HashMap<>();

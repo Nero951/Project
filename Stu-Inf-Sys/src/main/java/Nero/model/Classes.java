@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Classes {
+public class Classes extends DictionaryTag{
 
     private Integer id;
 
