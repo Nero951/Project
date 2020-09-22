@@ -156,7 +156,7 @@ public class StudentDAO {
         try {
             //1.获取数据库连接
             c = DBUtil.getConnection();
-            String sql = "update student set student_name=?, student_no=?, id_card=?,stuednt_email=?, classes_id=? where id=?";
+            String sql = "update student set student_name=?, student_no=?, id_card=?,student_email=?, classes_id=? where id=?";
             //2.创建操作命令对象
             ps = c.prepareStatement(sql);
             ps.setString(1,s.getStudentName());
@@ -169,6 +169,33 @@ public class StudentDAO {
             int num = ps.executeUpdate();
         } catch (Exception e) {
             throw new RuntimeException("修改学生信息出错", e);
+        }finally {
+            DBUtil.close(c, ps);
+        }
+    }
+
+    public static void delete(String[] ids) {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            //1.获取数据库连接
+            c = DBUtil.getConnection();
+            StringBuilder sql = new StringBuilder("delete from student where id in(");
+            for(int i=0;i <ids.length;i++) {
+                if (i != 0)
+                    sql.append(",");
+                sql.append("?");
+            }
+            sql.append(")");
+
+            //2.创建操作命令对象
+            ps = c.prepareStatement(sql.toString());
+            for(int i=0;i <ids.length;i++) {
+                ps.setInt(i+1, Integer.parseInt(ids[i]));
+            }
+            int num = ps.executeUpdate();
+        } catch (Exception e) {
+            throw new RuntimeException("删除学生出错", e);
         }finally {
             DBUtil.close(c, ps);
         }
