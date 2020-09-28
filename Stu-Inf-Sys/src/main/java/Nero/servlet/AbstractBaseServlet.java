@@ -2,6 +2,7 @@ package Nero.servlet;
 
 import Nero.model.Response;
 import Nero.util.JSONUtil;
+import Nero.util.ThreadLocalHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,6 +32,7 @@ public abstract class AbstractBaseServlet extends HttpServlet {
             r.setSuccess(true);
             r.setCode("OK");
             r.setMessage("操作成功");
+            r.setTotal(ThreadLocalHolder.getTOTAL().get());//不管是否分页接口，都获取当前线程中的total变量
             r.setData(o);
         } catch (Exception e) {
             r.setCode("ERROR500");
@@ -41,6 +43,8 @@ public abstract class AbstractBaseServlet extends HttpServlet {
             String stackTrance = sw.toString();
             System.err.println(stackTrance);
             r.setStackTrace(stackTrance);
+        }finally {
+            ThreadLocalHolder.getTOTAL().remove();//在线程结束前，删除变量。如果不删除，可能存在内存泄漏
         }
         pw.println(JSONUtil.write(r));
         pw.flush();
