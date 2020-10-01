@@ -23,9 +23,9 @@ public class LoginFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) servletRequest;
-        HttpServletResponse res = (HttpServletResponse) servletResponse;
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getServletPath();
         HttpSession session = req.getSession(false);//没有session的时候返回null
@@ -58,7 +58,7 @@ public class LoginFilter implements Filter {
             }
             return;
         }
-        filterChain.doFilter(servletRequest,servletResponse);
+        chain.doFilter(request,response);
     }
 
     @Override

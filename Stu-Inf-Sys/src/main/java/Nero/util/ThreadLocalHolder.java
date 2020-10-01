@@ -6,8 +6,4 @@ public class ThreadLocalHolder {
     public static ThreadLocal<Integer> getTOTAL() {
         return TOTAL;
     }
-
-   /* public static void setTOTAL(ThreadLocal<Integer> TOTAL) {
-        ThreadLocalHolder.TOTAL = TOTAL;
-    }*/
 }
