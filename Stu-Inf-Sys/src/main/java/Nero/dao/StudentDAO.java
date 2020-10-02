@@ -44,7 +44,7 @@ public class StudentDAO {
             if(p.getSortOrder() != null && p.getSortOrder().trim().length() > 0){
                 //不能用占位符替换，占位符替换会带上‘ ’ ，变成order by xxx 'asc'
                 //这里拼接字符串的方式，存在sql注入的风险，一般会校验一下，这里省略了
-                sql.append("    order by c.classes_name"+p.getSortOrder());
+                sql.append("    order by s.classes_id "+p.getSortOrder());
             }
             //1.获取查询总数量：sql可以复用，子查询的方式实现
             StringBuilder countSQL = new StringBuilder("select count(0) count from(");

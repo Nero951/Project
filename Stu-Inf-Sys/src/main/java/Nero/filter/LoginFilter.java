@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * 配置过滤器，只要请求路径匹配到过滤器路径，都会先执行过滤器的doFilter方法
  * 是否往后边的顺序执行，依赖于是否再次调用filterChain.doFilter方法
  */
-@WebFilter("/*")
+@WebFilter("/**")
 public class LoginFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

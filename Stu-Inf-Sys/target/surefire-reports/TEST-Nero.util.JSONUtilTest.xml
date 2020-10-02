@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="0" name="Nero.util.JSONUtilTest" time="0.346" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_192\jre\bin"/>
+    <property name="java.vm.version" value="25.192-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Program Java\GitHub\ProjectDemo\Stu-Inf-Sys"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\Program Java\GitHub\ProjectDemo\Stu-Inf-Sys"/>
+    <property name="java.runtime.version" value="1.8.0_192-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_192\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\WADEWI~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_192\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\JAVA\XShell\xshell\Xlpd 6\;D:\JAVA\XShell\xshell\Xshell 6\;D:\JAVA\XShell\xshell\Xmanager 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;D:\应用\github\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\JAVA\mysql-5.7.31-winx64\bin;C:\Program Files\Java\jdk1.8.0_192\bin\;C:\Program Files\Java\jdk1.8.0_192\jre\bin\;D:\JAVA\mysql-5.7.31-winx64\bin;D:\BaiduNetdiskDownload\java\MatLab\runtime\win64;D:\BaiduNetdiskDownload\java\MatLab\bin;D:\JAVA\apache-tomcat-8.5.57\bin;C:\Program Files (x86)\ATMEL Corporation\AT91-ISP v1.13\Library\;C:\Program Files (x86)\ATMEL Corporation\AT91-ISP v1.13\sam-ba 2.9;D:\Dev-Cpp\python-3.6.6\Scripts\;D:\Dev-Cpp\python-3.6.6\;C:\Users\Wade Winston Wilson\AppData\Local\Microsoft\WindowsApps;D:\Dev-Cpp\python-3.6.6\pycharm\PyCharm 2020.1.1\bin;C:\Users\Wade Winston Wilson\AppData\Local\GitHubDesktop\bin;D:\JAVA\mysql-5.7.31-winx64\bin;C:\Program Files\JetBrains\PyCharm 2019.3.3\bin;D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\bin;D:\JAVA\Fiddler;C:\Users\Wade Winston Wilson\.dotnet\tools;."/>
+    <property name="maven.conf" value="D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\plugins\maven\lib\maven3/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value="D:\JAVA\M2Repository"/>
+    <property name="os.version" value="10.0"/>
+    <property name="idea.version2019.3.3" value="true"/>
+    <property name="user.home" value="C:\Users\Wade Winston Wilson"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Wade Winston Wilson"/>
+    <property name="java.class.path" value="D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\lib\idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_192\jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.3.3 -s D:\JAVA\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml -Dmaven.repo.local=D:\JAVA\M2Repository package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_192"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_192\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_192\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_192\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_192\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\JAVA\ideaIU-2019.3.3\IntelliJ IDEA 2019.3.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="Nero.util.JSONUtilTest" name="testWrite" time="0.305"/>
+  <testcase classname="Nero.util.JSONUtilTest" name="testRead" time="0.041"/>
+</testsuite>
