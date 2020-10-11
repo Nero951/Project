@@ -57,10 +57,9 @@ create table student(
 
 
 -- 初始化数据
--- mysql中没有==，是用=号代替==。为了区分=和==，赋值时使用:=
 set @username:='abc';
 set @password:='123';
-set @nickname:='风一样的男子😱';
+set @nickname:='memo';
 set @email:='123@qq.com';
 
 set @dictionary_classes_graduate_year='000001';
