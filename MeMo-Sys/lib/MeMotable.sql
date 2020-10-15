@@ -33,13 +33,13 @@ create table dictionary_tag(
     foreign key (dictionary_id) references dictionary(id)
 ) comment '数据字典标签';
 
-drop table if exists classes;
+drop table if exists affairs;
 create table classes(
     id int primary key auto_increment,
-    classes_name varchar(20) not null comment '班级名称',
-    classes_graduate_year varchar(20) comment '毕业年份，数据字典000001',
-    classes_major varchar(20) comment '专业，数据字典000002',
-    classes_desc varchar(50) comment '备注',
+    affairs_name varchar(20) not null comment '班级名称',
+    affairs_graduate_year varchar(20) comment '毕业年份，数据字典000001',
+    affairs_major varchar(20) comment '专业，数据字典000002',
+    affairs_desc varchar(50) comment '备注',
     create_time timestamp default NOW() comment '创建时间'
 ) comment '班级表';
 
