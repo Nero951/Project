@@ -1,0 +1,10 @@
+nero\mapper\AwardMapper.class
+nero\model\User.class
+nero\mapper\MemberMapper.class
+nero\model\Record.class
+nero\model\Member.class
+nero\model\Setting.class
+nero\mapper\SettingMapper.class
+nero\mapper\RecordMapper.class
+nero\mapper\UserMapper.class
+nero\model\Award.class

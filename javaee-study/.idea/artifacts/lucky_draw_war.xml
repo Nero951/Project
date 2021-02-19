@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lucky-draw:war">
+    <output-path>$PROJECT_DIR$/lucky-draw/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>lucky-draw</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="LuckyDraw.war">
+      <element id="artifact" artifact-name="lucky-draw:war exploded" />
+    </root>
+  </artifact>
+</component>
