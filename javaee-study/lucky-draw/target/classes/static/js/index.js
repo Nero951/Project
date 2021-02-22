@@ -1,6 +1,6 @@
 window.vm = new Vue({
     el: '#app',
-    data() {
+    data() {//绑定页面数据
         let validateUsername = (rule, value, callback) => {
             console.log("validateUsername:"+value)
             if (this.$refs['register-form']) {

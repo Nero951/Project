@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="nero.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="nero.model.User">
+<mapper namespace="org.example.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="org.example.model.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -24,10 +24,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="nero.model.User">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.example.model.User" useGeneratedKeys="true">
     insert into user (username, password, nickname, 
       email, age, head, create_time
       )
@@ -35,10 +32,7 @@
       #{email,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{head,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="nero.model.User">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.example.model.User" useGeneratedKeys="true">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="username != null">
@@ -87,7 +81,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="nero.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="org.example.model.User">
     update user
     <set>
       <if test="username != null">
@@ -114,7 +108,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="nero.model.User">
+  <update id="updateByPrimaryKey" parameterType="org.example.model.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
@@ -125,76 +119,11 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectOne" parameterType="nero.model.User" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    <trim prefix="where" suffixOverrides="and">
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR}
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR}
-      </if>
-      <if test="nickname != null">
-        nickname = #{nickname,jdbcType=VARCHAR}
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR}
-      </if>
-      <if test="age != null">
-        age = #{age,jdbcType=INTEGER}
-      </if>
-      <if test="head != null">
-        head = #{head,jdbcType=VARCHAR}
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP}
-      </if>
-    </trim>
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, username, password, nickname, email, age, head, create_time
-    from user
-  </select>
-  <select id="selectByCondition" parameterType="nero.model.User" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    <trim prefix="where" suffixOverrides="and">
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR}
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR}
-      </if>
-      <if test="nickname != null">
-        nickname = #{nickname,jdbcType=VARCHAR}
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR}
-      </if>
-      <if test="age != null">
-        age = #{age,jdbcType=INTEGER}
-      </if>
-      <if test="head != null">
-        head = #{head,jdbcType=VARCHAR}
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP}
-      </if>
-    </trim>
-  </select>
-  <delete id="deleteByIds" parameterType="java.util.List">
-    delete from user
-      where id in
-    <foreach close=")" collection="list" item="item" open="(" separator=",">
-      #{item}
-    </foreach>
-  </delete>
 
-  <select id="login" parameterType="nero.model.User" resultMap="BaseResultMap">
-     select id, username, password, nickname, email, age, head, create_time
-     from user where username=#{username} and password=#{password}
+  <select id="selectByUsername" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where username = #{username}
   </select>
 </mapper>

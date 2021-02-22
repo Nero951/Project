@@ -1,4 +1,4 @@
- window.vm = new Vue({
+window.vm = new Vue({
     el: '#app',
     data: {
         batchNumber: 0,
@@ -168,11 +168,14 @@
                 count: award.count,
                 award: award.award,
             };
+
+
             if(award.action == 'update') data.id = award.id;
             axios.post(
                 "api/award/"+award.action,
                 data,
             ).then(function (json) {
+                if(award.action == 'add') vm.awards.data[index].id = json.data;
                 vm.awards.data[index].action = 'view';
                 showSuccess(vm, '操作成功');
             }).catch(e => {
@@ -231,6 +234,7 @@
                 "api/member/"+member.action,
                 data,
             ).then(function (json) {
+                if(member.action == 'add') vm.members.data[index].id = json.data;
                 vm.members.data[index].action = 'view';
                 showSuccess(vm, '操作成功');
             }).catch(e => {

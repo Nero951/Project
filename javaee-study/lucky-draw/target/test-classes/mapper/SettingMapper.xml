@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="nero.mapper.SettingMapper">
-  <resultMap id="BaseResultMap" type="nero.model.Setting">
+<mapper namespace="org.example.mapper.SettingMapper">
+  <resultMap id="BaseResultMap" type="org.example.model.Setting">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="batch_number" jdbcType="INTEGER" property="batchNumber" />
@@ -20,19 +20,13 @@
     delete from setting
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="nero.model.Setting">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.example.model.Setting" useGeneratedKeys="true">
     insert into setting (user_id, batch_number, create_time
       )
     values (#{userId,jdbcType=INTEGER}, #{batchNumber,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="nero.model.Setting">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.example.model.Setting" useGeneratedKeys="true">
     insert into setting
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -57,7 +51,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="nero.model.Setting">
+  <update id="updateByPrimaryKeySelective" parameterType="org.example.model.Setting">
     update setting
     <set>
       <if test="userId != null">
@@ -72,54 +66,11 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="nero.model.Setting">
+  <update id="updateByPrimaryKey" parameterType="org.example.model.Setting">
     update setting
     set user_id = #{userId,jdbcType=INTEGER},
       batch_number = #{batchNumber,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectOne" parameterType="nero.model.Setting" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from setting
-    <trim prefix="where" suffixOverrides="and">
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER}
-      </if>
-      <if test="batchNumber != null">
-        batch_number = #{batchNumber,jdbcType=INTEGER}
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP}
-      </if>
-    </trim>
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, user_id, batch_number, create_time
-    from setting
-  </select>
-  <select id="selectByCondition" parameterType="nero.model.Setting" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from setting
-    <trim prefix="where" suffixOverrides="and">
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER}
-      </if>
-      <if test="batchNumber != null">
-        batch_number = #{batchNumber,jdbcType=INTEGER}
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP}
-      </if>
-    </trim>
-  </select>
-  <delete id="deleteByIds" parameterType="java.util.List">
-    delete from setting
-      where id in
-    <foreach close=")" collection="list" item="item" open="(" separator=",">
-      #{item}
-    </foreach>
-  </delete>
 </mapper>
